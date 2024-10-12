@@ -186,7 +186,7 @@
                 console.log('Error', err);
               } else {
                 this.images = data.Contents.filter(item => 
-                  item.Key.endsWith('.jpg') || item.Key.endsWith('.png') || item.Key.endsWith('.gif')
+                  item.Key.endsWith('.jpg') || item.Key.endsWith('.png') || item.Key.endsWith('.gif') || item.Key.endsWith('.jpeg')
                 ).map(item => ({
                   key: item.Key,
                   url: `${publicURL}/${item.Key}`
