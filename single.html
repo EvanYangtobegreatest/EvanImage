@@ -178,7 +178,7 @@
           });
      
           const params = { Bucket: bucketName };
-   console.log(s3.listObjectsV2(params))
+   console.log("SAD",s3.listObjectsV2(params))
           try {
             // 获取 Bucket 中的所有对象
             s3.listObjectsV2(params, (err, data) => {
