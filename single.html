@@ -25,7 +25,10 @@
   <link rel="stylesheet" href="css/aos.css">
 
   <link rel="stylesheet" href="css/style.css">
-
+ <!-- 引入 Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- 引入 AWS SDK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.814.0/aws-sdk.min.js"></script>
 </head>
 <body>
 
@@ -126,9 +129,9 @@
           </div>
 
         </div>
-        <div class="row" id="lightgallery">
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_1.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque hic excepturi fugit, sunt impedit fuga tempora, ad amet aliquid?</p>">
-            <a href="#"><img src="images/nature_small_1.jpg" alt="IMage" class="img-fluid"></a>
+        <div  id="app" class="row" id="lightgallery">
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" v-for="(image, index) in images" :key="index" data-aos="fade" data-src="images/big-images/nature_big_1.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor doloremque hic excepturi fugit, sunt impedit fuga tempora, ad amet aliquid?</p>">
+            <a href="image.url"><img  :src="image.url" :alt="image.key"  class="img-fluid"></a>
           </div>
           
           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 item" data-aos="fade" data-src="images/big-images/nature_big_7.jpg" data-sub-html="<h4>Fading Light</h4><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quia illo voluptatibus numquam inventore, ab asperiores molestiae distinctio atque nihil.</p>">
@@ -144,7 +147,7 @@
             <a href="#"><img src="images/nature_small_4.jpg" alt="IMage" class="img-fluid"></a>
           </div>
 
-          
+        
         
 
 
